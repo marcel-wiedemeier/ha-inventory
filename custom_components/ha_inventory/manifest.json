@@ -1,0 +1,14 @@
+{
+  "domain": "ha_inventory",
+  "name": "HA Inventory",
+  "version": "0.1.0",
+  "documentation": "https://example.com/ha_inventory",
+  "requirements": [],
+  "dependencies": [
+    "file_upload"
+  ],
+  "codeowners": [
+    "@your-github-user"
+  ],
+  "iot_class": "local_push"
+}

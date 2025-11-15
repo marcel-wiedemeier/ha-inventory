@@ -1,0 +1,183 @@
+add_item:
+  name: Add inventory item
+  description: Create a new inventory item.
+  fields:
+    id:
+      name: Item ID
+      required: false
+      selector:
+        text: {}
+    name:
+      name: Name
+      required: true
+      selector:
+        text: {}
+    description:
+      name: Description
+      required: false
+      selector:
+        text:
+          multiline: true
+    area_id:
+      name: Area
+      required: false
+      selector:
+        area: {}
+    zone_entity_id:
+      name: Zone entity
+      required: false
+      selector:
+        entity:
+          domain: zone
+    ha_label_ids:
+      name: Labels
+      required: false
+      selector:
+        label:
+          multiple: true
+    category_id:
+      name: Category ID
+      required: false
+      selector:
+        text: {}
+    quantity:
+      name: Quantity
+      required: false
+      default: 1
+      selector:
+        number:
+          min: 0
+          step: 1
+    unit:
+      name: Unit
+      required: false
+      default: pcs
+      selector:
+        text: {}
+    notes:
+      name: Notes
+      required: false
+      selector:
+        text:
+          multiline: true
+
+update_item:
+  name: Update inventory item
+  description: Update an existing inventory item.
+  fields:
+    id:
+      name: Item ID
+      required: true
+      selector:
+        text: {}
+    name:
+      name: Name
+      required: false
+      selector:
+        text: {}
+    description:
+      name: Description
+      required: false
+      selector:
+        text:
+          multiline: true
+    area_id:
+      name: Area
+      required: false
+      selector:
+        area: {}
+    zone_entity_id:
+      name: Zone entity
+      required: false
+      selector:
+        entity:
+          domain: zone
+    ha_label_ids:
+      name: Labels
+      required: false
+      selector:
+        label:
+          multiple: true
+    archived:
+      name: Archived
+      required: false
+      selector:
+        boolean: {}
+
+delete_item:
+  name: Delete inventory item
+  description: Remove an item.
+  fields:
+    id:
+      name: Item ID
+      required: true
+      selector:
+        text: {}
+
+move_item_area:
+  name: Move item to area
+  description: Assign an item's area.
+  fields:
+    id:
+      name: Item ID
+      required: true
+      selector:
+        text: {}
+    area_id:
+      name: Area
+      required: false
+      selector:
+        area: {}
+
+set_item_zone:
+  name: Set item zone
+  description: Assign a zone entity to an item.
+  fields:
+    id:
+      name: Item ID
+      required: true
+      selector:
+        text: {}
+    zone_entity_id:
+      name: Zone entity
+      required: false
+      selector:
+        entity:
+          domain: zone
+
+add_item_photo_url:
+  name: Add photo from URL
+  description: Download a photo from a URL and attach it.
+  fields:
+    id:
+      name: Item ID
+      required: true
+      selector:
+        text: {}
+    image_url:
+      name: Image URL
+      required: true
+      selector:
+        text: {}
+    filename:
+      name: File name
+      required: false
+      selector:
+        text: {}
+
+add_item_photo_upload:
+  name: Upload photo for item
+  description: Upload a photo via UI and attach it.
+  fields:
+    id:
+      name: Item ID
+      required: true
+      selector:
+        text: {}
+    file:
+      name: Image file
+      required: true
+      selector:
+        file:
+          accept:
+            - image/*
